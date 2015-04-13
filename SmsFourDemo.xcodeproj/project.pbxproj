@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30118FB11AD80E400022EE60 /* SmsFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30118FB01AD80E400022EE60 /* SmsFour.framework */; };
 		30118FB31AD8114C0022EE60 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30118FB21AD8114C0022EE60 /* sample.jpg */; };
+		307482E81ADBA6D90023B2BF /* btSimplePopUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 307482E71ADBA6D90023B2BF /* btSimplePopUP.m */; };
+		307482EA1ADBA74A0023B2BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307482E91ADBA74A0023B2BF /* QuartzCore.framework */; };
+		307482EC1ADBA7500023B2BF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307482EB1ADBA7500023B2BF /* Accelerate.framework */; };
+		307482EE1ADBC8990023B2BF /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 307482ED1ADBC8990023B2BF /* camera.png */; };
+		307482F01ADBCC710023B2BF /* gallary.png in Resources */ = {isa = PBXBuildFile; fileRef = 307482EF1ADBCC710023B2BF /* gallary.png */; };
+		307482F21ADBCCFD0023B2BF /* cloudUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 307482F11ADBCCFD0023B2BF /* cloudUp.png */; };
+		307482F71ADBD9E10023B2BF /* RTSpinKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307482F61ADBD9E10023B2BF /* RTSpinKitView.m */; };
+		307482FC1ADBF81F0023B2BF /* SmsFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307482FB1ADBF81F0023B2BF /* SmsFour.framework */; };
 		30B558E11AD69AC00027027B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E01AD69AC00027027B /* main.m */; };
 		30B558E41AD69AC00027027B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E31AD69AC00027027B /* AppDelegate.m */; };
 		30B558E71AD69AC00027027B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E61AD69AC00027027B /* ViewController.m */; };
@@ -29,8 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30118FB01AD80E400022EE60 /* SmsFour.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmsFour.framework; sourceTree = "<group>"; };
 		30118FB21AD8114C0022EE60 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		307482E61ADBA6D90023B2BF /* btSimplePopUP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btSimplePopUP.h; sourceTree = "<group>"; };
+		307482E71ADBA6D90023B2BF /* btSimplePopUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btSimplePopUP.m; sourceTree = "<group>"; };
+		307482E91ADBA74A0023B2BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		307482EB1ADBA7500023B2BF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		307482ED1ADBC8990023B2BF /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		307482EF1ADBCC710023B2BF /* gallary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallary.png; sourceTree = "<group>"; };
+		307482F11ADBCCFD0023B2BF /* cloudUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudUp.png; sourceTree = "<group>"; };
+		307482F51ADBD9E10023B2BF /* RTSpinKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSpinKitView.h; sourceTree = "<group>"; };
+		307482F61ADBD9E10023B2BF /* RTSpinKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSpinKitView.m; sourceTree = "<group>"; };
+		307482F81ADBEE490023B2BF /* SmsFourDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmsFourDemo.entitlements; sourceTree = "<group>"; };
+		307482FB1ADBF81F0023B2BF /* SmsFour.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmsFour.framework; sourceTree = "<group>"; };
 		30B558DB1AD69AC00027027B /* SmsFourDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmsFourDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B558DF1AD69AC00027027B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30B558E01AD69AC00027027B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30118FB11AD80E400022EE60 /* SmsFour.framework in Frameworks */,
+				307482EC1ADBA7500023B2BF /* Accelerate.framework in Frameworks */,
+				307482EA1ADBA74A0023B2BF /* QuartzCore.framework in Frameworks */,
+				307482FC1ADBF81F0023B2BF /* SmsFour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,10 +84,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		307482E41ADBA6D90023B2BF /* Third Party Classes */ = {
+			isa = PBXGroup;
+			children = (
+				307482F41ADBD9E10023B2BF /* SpinKit */,
+				307482E51ADBA6D90023B2BF /* btSimplePopUp */,
+			);
+			path = "Third Party Classes";
+			sourceTree = "<group>";
+		};
+		307482E51ADBA6D90023B2BF /* btSimplePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				307482E61ADBA6D90023B2BF /* btSimplePopUP.h */,
+				307482E71ADBA6D90023B2BF /* btSimplePopUP.m */,
+			);
+			path = btSimplePopUp;
+			sourceTree = "<group>";
+		};
+		307482F41ADBD9E10023B2BF /* SpinKit */ = {
+			isa = PBXGroup;
+			children = (
+				307482F51ADBD9E10023B2BF /* RTSpinKitView.h */,
+				307482F61ADBD9E10023B2BF /* RTSpinKitView.m */,
+			);
+			path = SpinKit;
+			sourceTree = "<group>";
+		};
 		30B558D21AD69AC00027027B = {
 			isa = PBXGroup;
 			children = (
-				30118FB01AD80E400022EE60 /* SmsFour.framework */,
+				307482FB1ADBF81F0023B2BF /* SmsFour.framework */,
+				307482EB1ADBA7500023B2BF /* Accelerate.framework */,
+				307482E91ADBA74A0023B2BF /* QuartzCore.framework */,
 				30B558DD1AD69AC00027027B /* SmsFourDemo */,
 				30B558F71AD69AC10027027B /* SmsFourDemoTests */,
 				30B558DC1AD69AC00027027B /* Products */,
@@ -87,6 +135,8 @@
 		30B558DD1AD69AC00027027B /* SmsFourDemo */ = {
 			isa = PBXGroup;
 			children = (
+				307482F81ADBEE490023B2BF /* SmsFourDemo.entitlements */,
+				307482E41ADBA6D90023B2BF /* Third Party Classes */,
 				30B558E21AD69AC00027027B /* AppDelegate.h */,
 				30B558E31AD69AC00027027B /* AppDelegate.m */,
 				30B558E51AD69AC00027027B /* ViewController.h */,
@@ -103,8 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				30118FB21AD8114C0022EE60 /* sample.jpg */,
+				307482EF1ADBCC710023B2BF /* gallary.png */,
+				307482F11ADBCCFD0023B2BF /* cloudUp.png */,
 				30B558DF1AD69AC00027027B /* Info.plist */,
 				30B558E01AD69AC00027027B /* main.m */,
+				307482ED1ADBC8990023B2BF /* camera.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,6 +228,12 @@
 				TargetAttributes = {
 					30B558DA1AD69AC00027027B = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = XNF58669KA;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					30B558F31AD69AC10027027B = {
 						CreatedOnToolsVersion = 6.2;
@@ -206,10 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307482F21ADBCCFD0023B2BF /* cloudUp.png in Resources */,
+				307482F01ADBCC710023B2BF /* gallary.png in Resources */,
 				30B558EA1AD69AC00027027B /* Main.storyboard in Resources */,
 				30B558EF1AD69AC00027027B /* LaunchScreen.xib in Resources */,
 				30B558EC1AD69AC00027027B /* Images.xcassets in Resources */,
 				30118FB31AD8114C0022EE60 /* sample.jpg in Resources */,
+				307482EE1ADBC8990023B2BF /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B558E71AD69AC00027027B /* ViewController.m in Sources */,
+				307482F71ADBD9E10023B2BF /* RTSpinKitView.m in Sources */,
 				30B558E41AD69AC00027027B /* AppDelegate.m in Sources */,
+				307482E81ADBA6D90023B2BF /* btSimplePopUP.m in Sources */,
 				30B558E11AD69AC00027027B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -340,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -351,14 +415,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmsFourDemo/SmsFourDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SmsFourDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -366,14 +434,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmsFourDemo/SmsFourDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SmsFourDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

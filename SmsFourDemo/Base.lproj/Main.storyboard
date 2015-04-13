@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
@@ -16,33 +17,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUL-8I-e3l">
-                                <rect key="frame" x="274" y="112" width="53" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUL-8I-e3l">
+                                <rect key="frame" x="269" y="285" width="53" height="30"/>
                                 <state key="normal" title="Encrypt">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="encryptClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="H19-F8-6z4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubD-wd-TfV">
-                                <rect key="frame" x="273" y="228" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-9Z-b4V">
+                                <rect key="frame" x="269" y="285" width="63" height="30"/>
+                                <state key="normal" title="Load File">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadFileBtnClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zJ8-Wb-rMw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubD-wd-TfV">
+                                <rect key="frame" x="273" y="285" width="54" height="30"/>
                                 <state key="normal" title="Decrypt">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="decryptClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="It8-xj-ubW"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aX-dl-bQl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ubD-wd-TfV" firstAttribute="trailing" secondItem="AUL-8I-e3l" secondAttribute="trailing" id="MWb-Nr-CfM"/>
-                            <constraint firstItem="AUL-8I-e3l" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="92" id="Teo-6r-rN2"/>
-                            <constraint firstItem="ubD-wd-TfV" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="XmR-Xt-EQP"/>
-                            <constraint firstItem="ubD-wd-TfV" firstAttribute="top" secondItem="AUL-8I-e3l" secondAttribute="bottom" constant="86" id="mF0-8U-yYY"/>
+                            <constraint firstItem="8g4-9Z-b4V" firstAttribute="centerX" secondItem="ubD-wd-TfV" secondAttribute="centerX" id="51o-Vg-aqd"/>
+                            <constraint firstItem="AUL-8I-e3l" firstAttribute="baseline" secondItem="ubD-wd-TfV" secondAttribute="baseline" id="6ua-ux-3Zv"/>
+                            <constraint firstItem="7aX-dl-bQl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="DYo-nY-qXk"/>
+                            <constraint firstItem="7aX-dl-bQl" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="GNc-1Q-Svb"/>
+                            <constraint firstItem="AUL-8I-e3l" firstAttribute="leading" secondItem="8g4-9Z-b4V" secondAttribute="leading" id="O0c-qV-rIX"/>
+                            <constraint firstItem="ubD-wd-TfV" firstAttribute="baseline" secondItem="8g4-9Z-b4V" secondAttribute="baseline" id="PnW-Zs-8hy"/>
+                            <constraint firstItem="ubD-wd-TfV" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="R5M-LE-nhh"/>
+                            <constraint firstItem="ubD-wd-TfV" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="RXr-L2-0h7"/>
+                            <constraint firstItem="7aX-dl-bQl" firstAttribute="centerY" secondItem="AUL-8I-e3l" secondAttribute="centerY" id="UCx-Ve-dqf"/>
+                            <constraint firstItem="7aX-dl-bQl" firstAttribute="centerX" secondItem="ubD-wd-TfV" secondAttribute="centerX" id="y7h-QT-9qo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="decryptButton" destination="ubD-wd-TfV" id="xqH-m5-xe6"/>
+                        <outlet property="dimView" destination="7aX-dl-bQl" id="Y0o-PE-7Z5"/>
+                        <outlet property="encryptButton" destination="AUL-8I-e3l" id="koX-kM-jKl"/>
+                        <outlet property="loadFileBtn" destination="8g4-9Z-b4V" id="Ss2-GY-FCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

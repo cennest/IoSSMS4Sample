@@ -49,12 +49,20 @@ typedef void (^CompletionBlock)(BOOL success, NSError *error);
 /**
  *  This method encrypt sourcePath file and store encryption file in destinationPath.
  *
- *  @param sourcepath      Provide full file path with file name and extension, file should be available in given path otherwise method will return and send error message in completion block.
+ *  @param sourcepath      Provide full file path with file name and extension, file should be available in given path otherwise method will send error message in completion block.
  *  @param key             SMS4's 128 bits key use in encryption task. if key is null, the method will use default key. NOTE: Use same key to decrypt file.
  *  @param destinationPath Encrypted data store in destinationPath, if nil, method will overwrite source file with encrypted data.
  *  @param callback        Callback is block, notifies that method completed encryption task. it has two parameters a)success: BOOL value, status of encryption task. b)error: NSError, description of error if problem occurs.
  */
 -(void)encryptFile:(NSString*)sourcePath withKey:(uint32_t*)key saveFilePath:(NSString*)destinationPath completion:(CompletionBlock)callback;
+/**
+ *  This method encrypt sourcePath file and overwrite encryption file with the same sourcePath file.
+ *
+ *  @param filePath Provide full file path with file name and extension, file should be available in given path otherwise method will send error message in completion block.
+ *  @param key      SMS4's 128 bits key use in encryption task. if key is null, the method will use default key. NOTE: Use same key to decrypt file.
+ *  @param callback Callback is block, notifies that method completed encryption task. it has two parameters a)success: BOOL value, status of encryption task. b)error: NSError, description of error if problem occurs.
+ */
+-(void)encryptFile:(NSString*)filePath withKey:(uint32_t*)key completion:(CompletionBlock)callback;
 /**
  *  This method encrypts data and immediately returns encrypted data. For performance issue don't use large data, use method [encryptFile:withKey:saveFilePath:completion:] to encrypt large data file.
  *
@@ -74,18 +82,35 @@ typedef void (^CompletionBlock)(BOOL success, NSError *error);
  *  @param callBack        Callback is block, notifies that method completed encryption task. it has two parameters a)success: BOOL value, status of encryption task. b)error: NSError, description of error if problem occurs.
  */
 -(void)encryptData:(NSData*)data withKey:(uint32_t*)key saveFilePath:(NSString*)destinationPath completion:(CompletionBlock)callBack;
+/**
+ *  This method encrypt data of givien NSUrl and saves encrypted data in destinationPath.
+ *
+ *  @param fileUrl         Source file url.
+ *  @param key             SMS4's 128 bits key use in encryption task. if key is null, the method will use default key. NOTE: Use same key to decrypt file.
+ *  @param destinationPath Encrypted data store in destinationPath, destinationPath should not nil, otherwise method call callBack block with SFErrorDestinationDirectoryNotFound error.
+ *  @param callBack        Callback is block, notifies that method completed encryption task. it has two parameters a)success: BOOL value, status of encryption task. b)error: NSError, description of error if problem occurs.
+ */
+-(void)encryptFileFromUrl:(NSURL*)fileUrl withKey:(uint32_t*)key saveFilePath:(NSString*)destinationPath completion:(CompletionBlock)callBack;
 
 #pragma mark - Decryption Methods
 
 /**
  *  This method decrypt sourcePath file and store decryption file in destinationPath.
  *
- *  @param sourcepath      Provide full file path with file name and extension, file should be available in given path otherwise method will return and send error message in completion block.
+ *  @param sourcepath      Provide full file path with file name and extension, file should be available in given path otherwise method will send error message in completion block.
  *  @param key             Use the same key, which was used in ecryption task.
  *  @param destinationPath Decrypted data store in destinationPath, if nil, method will overwrite source file with decrypted data.
  *  @param callback        Callback is block, notifies that method completed decryption task. it has two parameter a)success: BOOL value, status of decryption task. b)error: NSError, description of error if problem occurs.
  */
 -(void)decryptFile:(NSString*)sourcePath withKey:(uint32_t*)key saveFilePath:(NSString*)destinationPath completion:(CompletionBlock)callback;
+/**
+ *  This method decrypt sourcePath file and overwrite decryption file with the same sourcePath file.
+ *
+ *  @param filePath Provide full file path with file name and extension, file should be available in given path otherwise method will send error message in completion block.
+ *  @param key      Use the same key, which was used in ecryption task.
+ *  @param callback Callback is block, notifies that method completed decryption task. it has two parameter a)success: BOOL value, status of decryption task. b)error: NSError, description of error if problem occurs.
+ */
+-(void)decryptFile:(NSString*)filePath withKey:(uint32_t*)key completion:(CompletionBlock)callback;
 /**
  *  This method decrypts data and immediately returns decrypted data. For performance issue don't use large data, use method [decryptFile:withKey:saveFilePath:completion:] to decrypt large data file.
  *
