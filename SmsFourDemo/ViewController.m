@@ -228,7 +228,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
         [pngData writeToFile:cameraImagePath atomically:YES];
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf stopActIndicator];
-            [weakSelf showAlertViewWithMessage:@"File saved!"];
+            //[weakSelf showAlertViewWithMessage:@"File saved!"];
             weakSelf.loadFileBtn.hidden = YES;
             weakSelf.encryptButton.hidden = NO;
         });
@@ -264,7 +264,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
         self.fileExtension = [path pathExtension];
         self.iCloudUrl=url;
         if (url) {
-            [self showAlertViewWithMessage:@"Got file url!"];
+            //[self showAlertViewWithMessage:@"Got file url!"];
             self.loadFileBtn.hidden = YES;
             self.encryptButton.hidden = NO;
         } else {
