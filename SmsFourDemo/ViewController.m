@@ -65,7 +65,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
 -(void)addPopup
 {
     NSArray* popUpImages = @[ [UIImage imageNamed:@"camera.png"],[UIImage imageNamed:@"gallary.png"],[UIImage imageNamed:@"cloudUp.png"]];
-    NSArray* popUpTitles = @[@"Camera",@"Gallary",@"iCloud"];
+    NSArray* popUpTitles = @[@"Camera",@"Gallery",@"iCloud"];
     NSArray* popUpActions =@[
                              ^{ [self openCamera]; },
                              ^{ [self openGallary]; },
