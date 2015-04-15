@@ -12,7 +12,7 @@
 #import "btSimplePopUP.h"
 #import "RTSpinKitView.h"
 
-static uint32_t key[4] = {0x11223344, 0x11223344, 0x11223344, 0x11223344};
+static NSString* const kcKey = @"DemoKey";
 static NSString* const kcOriginalFileFormate = @"%@/Original.%@";
 static NSString* const kcEncryptFileFormate = @"%@/Encrypt.%@";
 static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
@@ -94,9 +94,12 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     NSString* destinationPath = [NSString stringWithFormat:kcEncryptFileFormate,self.encryptedImgsPath,self.fileExtension];
     __weak typeof(self) weakSelf = self;
     SmsFour* smsFourFile = [[SmsFour alloc]init];
+    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
     [self startActivityIndicator];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
         [smsFourFile encryptFile:filePath withKey:key saveFilePath:destinationPath completion:^(BOOL success, NSError *error) {
+            free(key);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf stopActIndicator];
                 if (success) {
@@ -120,8 +123,10 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     __weak typeof(self) weakSelf = self;
     SmsFour* smsFourFile = [[SmsFour alloc]init];
     [self startActivityIndicator];
+    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [smsFourFile encryptFileFromUrl:self.iCloudUrl withKey:key saveFilePath:destinationPath completion:^(BOOL success, NSError *error) {
+            free(key);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf stopActIndicator];
                 if (success) {
@@ -144,8 +149,10 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     SmsFour* smsFourFile = [[SmsFour alloc]init];
     __weak typeof(self) weakSelf = self;
     [self startActivityIndicator];
+    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [smsFourFile decryptFile:sourceFile withKey:key saveFilePath:destinationPath completion:^(BOOL success, NSError *error) {
+            free(key);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf stopActIndicator];
                 if (success) {
