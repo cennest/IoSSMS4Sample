@@ -15,7 +15,7 @@
 		307482F01ADBCC710023B2BF /* gallary.png in Resources */ = {isa = PBXBuildFile; fileRef = 307482EF1ADBCC710023B2BF /* gallary.png */; };
 		307482F21ADBCCFD0023B2BF /* cloudUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 307482F11ADBCCFD0023B2BF /* cloudUp.png */; };
 		307482F71ADBD9E10023B2BF /* RTSpinKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307482F61ADBD9E10023B2BF /* RTSpinKitView.m */; };
-		30A3B5D51ADE642A005852D4 /* SmsFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A3B5D41ADE642A005852D4 /* SmsFour.framework */; };
+		309A7B221AE0C8C000A2AB0C /* SmsFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A7B211AE0C8C000A2AB0C /* SmsFour.framework */; };
 		30B558E11AD69AC00027027B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E01AD69AC00027027B /* main.m */; };
 		30B558E41AD69AC00027027B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E31AD69AC00027027B /* AppDelegate.m */; };
 		30B558E71AD69AC00027027B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B558E61AD69AC00027027B /* ViewController.m */; };
@@ -47,7 +47,7 @@
 		307482F51ADBD9E10023B2BF /* RTSpinKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSpinKitView.h; sourceTree = "<group>"; };
 		307482F61ADBD9E10023B2BF /* RTSpinKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSpinKitView.m; sourceTree = "<group>"; };
 		307482F81ADBEE490023B2BF /* SmsFourDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmsFourDemo.entitlements; sourceTree = "<group>"; };
-		30A3B5D41ADE642A005852D4 /* SmsFour.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmsFour.framework; sourceTree = "<group>"; };
+		309A7B211AE0C8C000A2AB0C /* SmsFour.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmsFour.framework; sourceTree = "<group>"; };
 		30B558DB1AD69AC00027027B /* SmsFourDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmsFourDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B558DF1AD69AC00027027B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30B558E01AD69AC00027027B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			files = (
 				307482EC1ADBA7500023B2BF /* Accelerate.framework in Frameworks */,
 				307482EA1ADBA74A0023B2BF /* QuartzCore.framework in Frameworks */,
-				30A3B5D51ADE642A005852D4 /* SmsFour.framework in Frameworks */,
+				309A7B221AE0C8C000A2AB0C /* SmsFour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,7 @@
 		30B558D21AD69AC00027027B = {
 			isa = PBXGroup;
 			children = (
-				30A3B5D41ADE642A005852D4 /* SmsFour.framework */,
+				309A7B211AE0C8C000A2AB0C /* SmsFour.framework */,
 				307482EB1ADBA7500023B2BF /* Accelerate.framework */,
 				307482E91ADBA74A0023B2BF /* QuartzCore.framework */,
 				30B558DD1AD69AC00027027B /* SmsFourDemo */,

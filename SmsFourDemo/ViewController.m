@@ -7,6 +7,7 @@
 //
 
 #import <SmsFour/SmsFour.h>
+#import <CommonCrypto/CommonDigest.h>
 
 #import "ViewController.h"
 #import "btSimplePopUP.h"
@@ -16,6 +17,7 @@ static NSString* const kcKey = @"DemoKey";
 static NSString* const kcOriginalFileFormate = @"%@/Original.%@";
 static NSString* const kcEncryptFileFormate = @"%@/Encrypt.%@";
 static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
+static NSUInteger const kSMS4KeyArraySize = 4;
 
 @interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *encryptButton;
@@ -94,7 +96,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     NSString* destinationPath = [NSString stringWithFormat:kcEncryptFileFormate,self.encryptedImgsPath,self.fileExtension];
     __weak typeof(self) weakSelf = self;
     SmsFour* smsFourFile = [[SmsFour alloc]init];
-    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
+    uint32_t* key =[self createKeyFormString:kcKey];
     [self startActivityIndicator];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
@@ -123,7 +125,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     __weak typeof(self) weakSelf = self;
     SmsFour* smsFourFile = [[SmsFour alloc]init];
     [self startActivityIndicator];
-    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
+    uint32_t* key =[self createKeyFormString:kcKey];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [smsFourFile encryptFileFromUrl:self.iCloudUrl withKey:key saveFilePath:destinationPath completion:^(BOOL success, NSError *error) {
             free(key);
@@ -149,7 +151,7 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
     SmsFour* smsFourFile = [[SmsFour alloc]init];
     __weak typeof(self) weakSelf = self;
     [self startActivityIndicator];
-    uint32_t* key =[smsFourFile createKeyFormString:kcKey];
+    uint32_t* key =[self createKeyFormString:kcKey];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [smsFourFile decryptFile:sourceFile withKey:key saveFilePath:destinationPath completion:^(BOOL success, NSError *error) {
             free(key);
@@ -278,6 +280,28 @@ static NSString* const kcDecryptFileFormate = @"%@/Decrypt.%@";
             [self showAlertViewWithMessage:@"File url is NULL!"];
         }
     }
+}
+
+#pragma mark - Create SMS4 key
+
+-(uint32_t*)createKeyFormString:(NSString*)keyString
+{
+    //Refer following link.
+    //http://stackoverflow.com/questions/18122192/custom-string-to-128-bit-string and http://stackoverflow.com/questions/16059594/sha1-hash-producing-different-result-in-objective-c-and-c-net
+    const char* cString = [keyString cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData* data1 = [NSData dataWithBytes:cString length:keyString.length];
+    uint8_t hash [CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(data1.bytes, data1.length, hash);
+    size_t size = sizeof(uint32_t)*kSMS4KeyArraySize;
+    uint32_t *keyArray = (uint32_t*)malloc(size);
+    memset(keyArray, 0, size);
+    int lastByteIndex=0;
+    for (int i=0; i < kSMS4KeyArraySize ; i++) {
+        uint32_t result = (hash[lastByteIndex]<<24) | (hash[lastByteIndex+1]<<16)| (hash[lastByteIndex+2]<<8) | hash[lastByteIndex+3];
+        keyArray[i]=result;
+        lastByteIndex=lastByteIndex+4;
+    }
+    return keyArray;
 }
 
 @end
